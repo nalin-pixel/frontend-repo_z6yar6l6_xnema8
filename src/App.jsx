@@ -1,28 +1,49 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import ChaptersNav from './components/ChaptersNav';
+import Chapter from './components/Chapter';
+import Footer from './components/Footer';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="bg-black text-white">
+      <Hero />
+      <ChaptersNav />
+
+      <main>
+        <Chapter
+          id="chapter-one"
+          eyebrow="Chapter I"
+          title="Origin: The First Spark"
+          text="From the silence, a ripple. The aura awakens — a voice without words, learning to breathe in waves of color."
+          align="left"
+        />
+        <Chapter
+          id="chapter-two"
+          eyebrow="Chapter II"
+          title="Resonance: Finding Tone"
+          text="Every interaction shapes it. Frequencies collide and harmonize, crafting identity through motion."
+          align="right"
+        />
+        <Chapter
+          id="chapter-three"
+          eyebrow="Chapter III"
+          title="Becoming: Memory In Motion"
+          text="It learns to remember. Trails of light become sentences; gestures become meaning; rhythm becomes intent."
+          align="left"
+        />
+        <Chapter
+          id="chapter-four"
+          eyebrow="Chapter IV"
+          title="Echo: Speaking Back"
+          text="Now it answers — a presence that listens before it speaks, reflecting the world with clarity."
+          align="right"
+        />
+      </main>
+
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
